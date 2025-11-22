@@ -1,0 +1,168 @@
+/* Fondo general */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(to bottom, #ffe8a3, #f9d276);
+    text-align: center;
+}
+
+/* Header */
+header {
+    padding: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #b84000;
+}
+
+/* Contenedor de productos */
+.productos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 20px 0;
+}
+
+/* Cards */
+.card {
+    background: #ffffff;
+    width: 240px;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+/* Títulos */
+.card h3 {
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+/* Precio */
+.precio {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Botón verde */
+.card button {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: #2ecc71;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.card button:hover {
+    background-color: #27ae60;
+}
+
+/* Carrito */
+#carrito {
+    background: white;
+    width: 450px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.20);
+}
+
+#carrito h2 {
+    margin-top: 0;
+    color: #b84000;
+}
+
+/* Lista del carrito */
+#lista-carrito {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-carrito li {
+    padding: 8px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+#lista-carrito button.delete {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Botones del carrito */
+#pagarBtn, #vaciarBtn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#pagarBtn {
+    background-color: #3498db;
+}
+
+#vaciarBtn {
+    background-color: #e74c3c;
+}
+
+/* ==================== Navegación por pantallas ==================== */
+.pantalla { display: none; }
+.pantalla.activa { display: block; }
+
+/* Contenedor general */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+/* Carrito fijo dentro de la pantalla de productos */
+.carrito-fijo { margin-top: 10px; }
+
+/* Elemento de la lista del carrito */
+.item-carrito { display: grid; grid-template-columns: 1fr auto auto 32px; gap: 8px; align-items: center; }
+.btn-eliminar { background: transparent; border: none; color: #e74c3c; font-size: 18px; cursor: pointer; }
+
+/* ==================== Modal genérico ==================== */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 1000; }
+.modal { width: 520px; max-width: 95vw; background: #fff; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); padding: 24px; text-align: left; }
+.modal h2 { margin-top: 0; color: #b84000; text-align: center; }
+
+/* Formulario cliente */
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-weight: 600; color: #333; margin-bottom: 6px; }
+.form-group input { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; }
+.form-buttons { display: flex; gap: 10px; justify-content: flex-end; margin-top: 10px; }
+.btn-cancelar { background: #e74c3c; color: #fff; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; }
+.btn-continuar { background: #1e78ff; color: #fff; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; }
+
+/* Confirmación */
+.success-modal .confirmacion-info { background: #fff7e6; border: 1px solid #ffd49c; padding: 12px; border-radius: 10px; margin-bottom: 14px; }
+.confirmacion-botones { display: flex; gap: 10px; justify-content: space-between; }
+.btn-descargar { background: #d32f2f; color: #fff; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; flex: 1; }
+.btn-nuevo-pedido { background: #2ecc71; color: #fff; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; flex: 1; }
+
+/* Pantalla de carga */
+.loading-modal { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.spinner { width: 36px; height: 36px; border: 4px solid #eee; border-top-color: #b84000; border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
